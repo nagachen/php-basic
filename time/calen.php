@@ -47,18 +47,9 @@ for($i=0;$i<$weeks;$i++){                          #第幾週
     echo "<tr>";
     for($j=0;$j<7;$j++){                           #每週第幾天
         echo "<td>";
-        if($i==0){
-            if($j<$firstDateWeek){                  #填入第一週空白或日期
-                echo "&nbsp;";
-            }else{
-                echo $j+7*$i-$firstWeekSpace;       #填日期
-            }
-        }else if($i==$weeks-1){                     #最後一週
-            if($j>$finalDateWeek){                  #填入最後一週空白
-                echo "&nbsp;";
-            }else{
-                echo $j+7*$i-$firstWeekSpace;      #填入最後一週日期   
-            }
+        if(($i==0 && $j<$firstDateWeek) || ($i==$weeks-1 && $j>$finalDateWeek)){
+                                                   #填入第一週或最後一週空白或日期
+                echo "&nbsp;";           
         }else{
             echo $j+7*$i-$firstWeekSpace;            #都不是，就填日期
         }
