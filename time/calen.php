@@ -43,7 +43,7 @@ echo "<td>四</td>";
 echo "<td>五</td>";
 echo "<td>六</td>";
 echo "</tr>";
-for($i=0;$i<$weeks;$i++){
+for($i=0;$i<$weeks;$i++){          #形成月歷
     echo "<tr>";
     for($j=0;$j<7;$j++){
         echo "<td>";
